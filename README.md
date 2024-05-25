@@ -13,6 +13,15 @@
 
 > 앱에 인증서를 안넣어서 설치 프로그램 실행 시 경고 문구가 표시됩니다, 무시하고 설치 진행해주세요!
 
+## 다운로드 및 설치하기
+
+1. 우측에 있는Releases를 클릭하거나 바로 밑에 표시되는 최신 버전 클릭
+![image](https://github.com/2skydev/lostark-chophago-overlay/assets/43225384/fadf7a6f-5be0-4364-9e93-95714a4a0145)
+2. `chophago-overlay-{version}.exe` 파일 다운로드
+![image](https://github.com/2skydev/lostark-chophago-overlay/assets/43225384/d5fdeb10-4e96-4f68-9e73-c38d7b8ff071)
+3. 다운로드한 파일 실행 (자동 설치)
+4. 추후 앱 실행 시 `chophago overlay` 라는 이름으로 찾을 수 있습니다
+
 <br/>
 
 ## Architecture
