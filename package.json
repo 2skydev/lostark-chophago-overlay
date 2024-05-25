@@ -1,7 +1,7 @@
 {
-  "name": "electron-nestjs-react-vite-template",
-  "version": "0.1.1",
-  "description": "electron + react + nestjs + vite template",
+  "name": "lostark-chophago-overlay",
+  "version": "0.1.0",
+  "description": "Lost Ark 초파고 오버레이",
   "main": "./out/main/index.js",
   "license": "MIT",
   "author": {

@@ -1,17 +1,17 @@
 {
-  "appId": "com.2skydev.example",
-  "productName": "electron-nestjs-react-vite-template",
+  "appId": "com.2skydev.chophago-overlay",
+  "productName": "chophago overlay",
   "protocols": {
-    "name": "example",
+    "name": "chophago-overlay",
     "schemes": [
-      "example"
+      "chophago-overlay"
     ]
   },
   "publish": [
     {
       "provider": "github",
       "owner": "2skydev",
-      "repo": "electron-nestjs-react-vite-template"
+      "repo": "lostark-chophago-overlay"
     }
   ],
   "asar": true,
