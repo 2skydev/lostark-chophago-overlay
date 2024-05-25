@@ -1,46 +1,17 @@
-![image](https://github.com/2skydev/electron-nestjs-react-vite-template/assets/43225384/431d3d65-8292-4189-977a-f13bb3dedd5e)
+![image](https://github.com/2skydev/lostark-chophago-overlay/assets/43225384/620b7418-e67f-4e9d-9bab-36bc3b85bfed)
 
-# Electron + NestJS + React + Vite template
+# Lost Ark 초파고 오버레이
 
-Electron starter kit with multiple features
+단순히 초파고 사이트를 불러온 뒤 창 위치를 항상 위로 고정시키는 앱입니다.
+- 헤더 제거
+- 스크롤 숨기기
+- 항상 위로 고정
+- 전체적인 크기 70%로 축소
+- 다양한 크기 조정 가능 (트레이 메뉴를 통해서 가능)
+- 창 위치 변경 시 추후 다시 열때 위치 기억
+- 앱 자동 업데이트
 
-![image](https://github.com/2skydev/electron-nestjs-react-vite-template/assets/43225384/5b717dd7-24e1-4a86-8df7-b1d93a986d46)
-
-![image](https://github.com/2skydev/electron-nestjs-react-vite-template/assets/43225384/47cb748a-52de-4e93-89b1-90a92b455e24)
-
-<br/>
-
-## Features
-
-- Electron
-  - Electron builder
-  - Electron store (json storage)
-  - Auto updater
-    - Update loading screen
-  - Auto launch
-  - NestJS
-    - [Standalone application](https://docs.nestjs.com/standalone-applications)
-    - IPC handler, sender decorator
-  - IPC preload script auto generate
-- React
-  - File system based router (nextjs pages router like)
-- i18n
-  - The default language is set by detecting which language you use
-
-<br/>
-
-## Overview framework & library
-
-- App framework: [`electron`](https://www.electronjs.org/)
-- App build tool: [`electron-builder`](https://www.electron.build/)
-- App storage: [`electron-store`](https://github.com/sindresorhus/electron-store)
-- App auto updater: [`electron-updater`](https://www.electron.build/auto-update)
-- Bundle tool: [`vite`](https://vitejs.dev/) + [`electron-vite`](https://electron-vite.org/)
-- Main process framework: [`nestjs`](https://nestjs.com/)
-- Renderer process framework: [`react`](https://react.dev/) + [`typescript`](https://www.typescriptlang.org/)
-- Code style: `eslint` + `prettier` + [`@trivago/prettier-plugin-sort-imports`](https://github.com/trivago/prettier-plugin-sort-imports)
-- File system based router: [`react-router-dom v6`](https://reactrouter.com/docs/en/v6) + custom (src/components/FileSystemRoutes)
-- i18n: [`i18next`](https://www.i18next.com/) + [`react-i18next`](https://react.i18next.com/)
+> 앱에 인증서를 안넣어서 설치 프로그램 실행 시 경고 문구가 표시됩니다, 무시하고 설치 진행해주세요!
 
 <br/>
 
@@ -59,13 +30,6 @@ Electron starter kit with multiple features
 <br/>
 
 ## Getting started
-
-#### use template
-
-- Create a repository from this template or fork this repository
-- Create dev branch from main
-- Set secret from github repository settings (Settings > Secrets and variables > Actions > New repository secret)
-  - `PERSONAL_TOKEN`: Github personal access token (repo scope)
 
 #### dev mode
 
