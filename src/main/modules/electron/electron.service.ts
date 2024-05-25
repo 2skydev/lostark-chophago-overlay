@@ -54,8 +54,8 @@ export class ElectronService implements OnModuleInit, OnApplicationBootstrap {
   )
   public readonly IS_HIDDEN_LAUNCH = process.argv.includes('--hidden')
 
-  public readonly APP_WIDTH = 1800
-  public readonly APP_HEIGHT = 1000
+  public readonly APP_WIDTH = 800
+  public readonly APP_HEIGHT = 1100
 
   public readonly ZOOM_PERCENT_ARRAY = ZOOM_PERCENT_ARRAY
 
@@ -236,7 +236,6 @@ export const generatedIpcOnContext = {`
   // execute by `src/main/index.ts`
   @ExecuteLog()
   public async start() {
-    console.log('start', !this.IS_HIDDEN_LAUNCH && !this.isNeedUpdate)
     if (!this.IS_HIDDEN_LAUNCH && !this.isNeedUpdate) {
       await this.createWindow()
 
@@ -252,7 +251,6 @@ export const generatedIpcOnContext = {`
 
   public async createWindow() {
     return new Promise<void>(async resolve => {
-      console.log('createWindow', this.window)
       if (this.window) {
         if (this.window.isMinimized()) this.window.restore()
         this.window.focus()
@@ -265,7 +263,7 @@ export const generatedIpcOnContext = {`
         width: this.APP_WIDTH,
         height: this.APP_HEIGHT,
         backgroundColor: '#2F3242',
-        darkTheme: true,
+        resizable: true,
         show: false,
         autoHideMenuBar: true,
         icon: this.ICON,
@@ -278,11 +276,12 @@ export const generatedIpcOnContext = {`
       this.window.on('ready-to-show', () => {
         this.applyZoom(this.zoom)
         this.window!.show()
+        this.window?.setAlwaysOnTop(true, 'pop-up-menu')
         resolve()
       })
 
       this.window.on('close', () => {
-        this.window = null
+        app.quit()
       })
 
       this.window.on('moved', () => {
@@ -297,14 +296,15 @@ export const generatedIpcOnContext = {`
         return { action: 'deny' }
       })
 
-      if (app.isPackaged) {
-        await this.window.loadFile(this.PROD_LOAD_FILE_PATH, {
-          hash: '#',
-        })
-      } else {
-        await this.window.loadURL(this.DEV_URL + '#')
-        this.window.webContents.openDevTools()
-      }
+      this.window.webContents.on('dom-ready', () => {
+        this.window!.webContents.insertCSS(`
+          nav, ::-webkit-scrollbar {
+            display: none !important;
+          }
+        `)
+      })
+
+      await this.window.loadURL('https://cho.elphago.work')
     })
   }
 
@@ -351,8 +351,8 @@ export const generatedIpcOnContext = {`
 
     // setMinimumSize를 사용하는 이유는 아래 setSize만 사용했을 때 의도된 설계인지 모르겠지만 최소 크기가 자동으로 변경되어 크기를 줄일 수 없다.
     // 그래서 setMinimumSize를 사용하여 직접 최소 크기를 변경 후 setSize를 사용하여 크기를 변경한다.
-    this.window.setMinimumSize(this.APP_WIDTH * zoom, this.APP_HEIGHT * zoom)
-    this.window.setSize(this.APP_WIDTH * zoom, this.APP_HEIGHT * zoom, true)
+    // this.window.setMinimumSize(this.APP_WIDTH * zoom, this.APP_HEIGHT * zoom)
+    this.window.setSize(Math.floor(this.APP_WIDTH * zoom), Math.floor(this.APP_HEIGHT * zoom))
     this.window.webContents.setZoomFactor(zoom)
   }
 

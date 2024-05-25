@@ -19,7 +19,7 @@ export const configStore = new Store<ConfigStoreValues>({
     general: {
       autoLaunch: false,
       developerMode: IS_DEV,
-      zoom: 1.0,
+      zoom: 0.7,
       restoreWindowPosition: true,
       language: null,
     },
